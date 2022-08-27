@@ -84,6 +84,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="max-w-7xl mx-auto mt-4">
+				{{ $products->links() }}
+			</div>
 		</div>
 	</section>
 @endsection

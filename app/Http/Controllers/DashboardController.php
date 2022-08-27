@@ -22,28 +22,28 @@ class DashboardController extends Controller
 	
 	public function products()
 	{
-		$products = Product::all();
+		$products = Product::simplePaginate(5);
 		
 		return view('sections.dashboard.products', compact('products'));
 	}
 	
 	public function galleries()
 	{
-		$galleries = Gallery::all();
+		$galleries = Gallery::simplePaginate(5);
 		
 		return view('sections.dashboard.gallery', compact('galleries'));
 	}
 	
 	public function testimonials()
 	{
-		$testimonials = Testimony::all();
+		$testimonials = Testimony::simplePaginate(10);
 		
 		return view('sections.dashboard.testimonials', compact('testimonials'));
 	}
 	
 	public function users()
 	{
-		$users = User::all();
+		$users = User::simplePaginate(10);
 		
 		return view('sections.dashboard.users', compact('users'));
 	}

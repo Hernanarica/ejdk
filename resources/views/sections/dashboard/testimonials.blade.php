@@ -77,6 +77,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="max-w-7xl mx-auto mt-4">
+				{{ $testimonials->links() }}
+			</div>
 		</div>
 	</section>
 @endsection
