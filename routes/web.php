@@ -22,7 +22,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+Route::controller(DashboardController::class)->prefix('/dashboard')->group(function () {
+	Route::get('', [DashboardController::class, 'index'])->name('dashboard.index');
+	Route::get('/products', [DashboardController::class, 'products'])->name('dashboard_products.index');
+	Route::get('/galleries', 'galleries')->name('dashboard_gallery.index');
+	Route::get('/testimonials', 'testimonials')->name('dashboard_testimonials.index');
+	Route::get('/users', 'users')->name('dashboard_users.index');
+});
 
 Route::controller(ProductController::class)->prefix('/products')->group(function () {
 	Route::get('', 'index')->name('products.index');

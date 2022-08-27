@@ -27,7 +27,7 @@
 										Productos
 									</span>
 									<a
-										href=""
+										href="{{ route('dashboard_products.index') }}"
 										class="text-indigo-600 text-sm"
 									>
 										Ver todos
@@ -102,7 +102,7 @@
 										Testimonios
 									</span>
 									<a
-										href=""
+										href="{{ route('dashboard_testimonials.index') }}"
 										class="text-indigo-600 text-sm"
 									>
 										Ver todos
@@ -177,7 +177,7 @@
 										Usuarios
 									</span>
 									<a
-										href=""
+										href="{{ route('dashboard_users.index') }}"
 										class="text-indigo-600 text-sm"
 									>
 										Ver todos
@@ -250,7 +250,7 @@
 										Galeria
 									</span>
 									<a
-										href=""
+										href="{{ route('dashboard_gallery.index') }}"
 										class="text-indigo-600 text-sm"
 									>
 										Ver todos
