@@ -36,7 +36,6 @@
 							<table class="min-w-full divide-y divide-gray-300">
 								<thead class="bg-gray-50">
 									<tr>
-										<th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Nombre</th>
 										<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
 										<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
 											<span class="sr-only">Edit</span>
@@ -47,24 +46,30 @@
 									
 									@foreach($users as $user)
 										<tr>
-											<td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $user->name }}</td>
 											<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->email }}</td>
 											<td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
 												<div>
 													<div>
 														<a
-															href=""
+															href="{{ route('users.edit', [ 'id' => $user->id ]) }}"
 															class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 														>
 															Editar
 														</a>
-														<a
-															href=""
-															class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200
-															focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+														<form
+															action="{{ route('users.destroy', [ 'id' => $user->id ]) }}"
+															method="post"
+															class="inline-block"
 														>
-															Eliminar
-														</a>
+															@csrf
+															@method('DELETE')
+															<button
+																class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200
+																focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+															>
+																Eliminar
+															</button>
+														</form>
 													</div>
 												</div>
 											</td>
