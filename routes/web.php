@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::controller(DashboardController::class)->prefix('/dashboard')->group(function () {
+Route::controller(DashboardController::class)->middleware('auth')->prefix('/dashboard')->group(function () {
 	Route::get('', [DashboardController::class, 'index'])->name('dashboard.index');
 	Route::get('/products', [DashboardController::class, 'products'])->name('dashboard_products.index');
 	Route::get('/galleries', 'galleries')->name('dashboard_gallery.index');
@@ -33,14 +33,14 @@ Route::controller(DashboardController::class)->prefix('/dashboard')->group(funct
 
 Route::controller(ProductController::class)->prefix('/products')->group(function () {
 	Route::get('', 'index')->name('products.index');
-	Route::get('/create', 'create')->name('products.create');
-	Route::post('', 'store')->name('products.store');
-	Route::get('/{id}/edit', 'edit')->name('products.edit');
-	Route::patch('/{id}', 'update')->name('products.update');
-	Route::delete('/{id}', 'destroy')->name('products.destroy');
+	Route::get('/create', 'create')->name('products.create')->middleware('auth');
+	Route::post('', 'store')->name('products.store')->middleware('auth');
+	Route::get('/{id}/edit', 'edit')->name('products.edit')->middleware('auth');
+	Route::patch('/{id}', 'update')->name('products.update')->middleware('auth');
+	Route::delete('/{id}', 'destroy')->name('products.destroy')->middleware('auth');
 });
 
-Route::controller(TestimonialController::class)->prefix('/testimonials')->group(function () {
+Route::controller(TestimonialController::class)->middleware('auth')->prefix('/testimonials')->group(function () {
 	Route::get('/create', 'create')->name('testimonials.create');
 	Route::post('', 'store')->name('testimonials.store');
 	Route::get('/{id}/edit', 'edit')->name('testimonials.edit');
@@ -48,7 +48,7 @@ Route::controller(TestimonialController::class)->prefix('/testimonials')->group(
 	Route::delete('/{id}', 'destroy')->name('testimonials.destroy');
 });
 
-Route::controller(GalleryController::class)->prefix('/gallery')->group(function () {
+Route::controller(GalleryController::class)->middleware('auth')->prefix('/gallery')->group(function () {
 	Route::get('/create', 'create')->name('gallery.create');
 	Route::post('', 'store')->name('gallery.store');
 	Route::get('/{id}/edit', 'edit')->name('gallery.edit');
@@ -56,7 +56,7 @@ Route::controller(GalleryController::class)->prefix('/gallery')->group(function 
 	Route::delete('/{id}', 'destroy')->name('gallery.destroy');
 });
 
-Route::controller(UserController::class)->prefix('/users')->group(function () {
+Route::controller(UserController::class)->middleware('auth')->prefix('/users')->group(function () {
 	Route::get('/create', 'create')->name('users.create');
 	Route::post('', 'store')->name('users.store');
 	Route::get('/{id}/edit', 'edit')->name('users.edit');
