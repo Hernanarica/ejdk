@@ -183,8 +183,7 @@
 										Ver todos
 									</a>
 								</div>
-								<a href=""
-								   type="button"
+								<a href="{{ route('users.create') }}"
 								   class="inline-flex items-center p-1 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none
 									   focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 								>
@@ -256,8 +255,7 @@
 										Ver todos
 									</a>
 								</div>
-								<a href=""
-								   type="button"
+								<a href="{{ route('gallery.create') }}"
 								   class="inline-flex items-center p-1 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none
 									   focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 								>

@@ -10,4 +10,9 @@ class TestimonialController extends Controller
 	{
 		return view('sections.dashboard.testimonials');
 	}
+	
+	public function create()
+	{
+		return view('sections.dashboard.testimonials-create');
+	}
 }

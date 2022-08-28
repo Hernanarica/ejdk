@@ -10,4 +10,9 @@ class UserController extends Controller
 	{
 		return view('sections.dashboard.users');
 	}
+
+	public function create()
+	{
+		return view('sections.dashboard.users-create');
+	}
 }

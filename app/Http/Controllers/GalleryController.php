@@ -10,4 +10,9 @@ class GalleryController extends Controller
 	{
 		return view('sections.dashboard.gallery');
 	}
+
+	public function create()
+	{
+		return view('sections.dashboard.gallery-create');
+	}
 }

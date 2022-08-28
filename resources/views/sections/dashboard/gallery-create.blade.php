@@ -1,5 +1,5 @@
 @extends('layout.layout-template')
-@section('title', 'Crear producto')
+@section('title', 'Crear item')
 @section('content')
 	<div class="relative min-h-[calc(100vh-88px)] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 		
@@ -28,7 +28,7 @@
 				class="mx-auto h-16 w-auto"
 				src="{{ asset('src/assets/imgs/logos/logo-ejdk.png') }}"
 				alt="Workflow">
-			<h2 class="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">Crear Producto</h2>
+			<h2 class="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">Crear Item de galeria</h2>
 		</div>
 		
 		<div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -36,15 +36,15 @@
 				<form class="space-y-6" action="{{ route('products.store') }}" method="POST">
 					<div>
 						<label
-							for="title"
+							for="name"
 							class="block text-sm font-medium text-gray-700"
 						>
-							Titulo
+							Nombre
 						</label>
 						<div class="mt-1">
 							<input
-								id="title"
-								name="title"
+								id="name"
+								name="name"
 								type="text"
 								class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 							>
