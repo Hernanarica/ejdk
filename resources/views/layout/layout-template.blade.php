@@ -281,7 +281,8 @@
 				</p>
 			</div>
 		</footer>
-		@vite('resources/js/app.js')
+{{--		@vite('resources/js/app.js')--}}
 		<script src="{{ asset('src/js/hamburgerMenu.js') }}"></script>
+		@stack('js')
 	</body>
 </html>
