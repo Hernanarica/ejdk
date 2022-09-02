@@ -4,7 +4,28 @@
 @extends('layout.layout-template')
 @section('title', 'Editar usuario')
 @section('content')
-	<section class="min-h-[calc(100vh-88px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+	<section class="relative min-h-[calc(100vh-88px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+		
+		<div class="absolute top-10 left-10">
+			<a
+				href="{{ route('dashboard.index') }}"
+				class="inline-flex items-center px-3 py-2 mb-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700
+				focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+			>
+				<svg
+					class="-ml-0.5 mr-2 h-4 w-4"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+				</svg>
+				Volver
+			</a>
+		</div>
+		
 		<div class="max-w-md w-full space-y-8">
 			<div>
 				<img
