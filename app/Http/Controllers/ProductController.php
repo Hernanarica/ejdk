@@ -76,4 +76,15 @@ class ProductController extends Controller
 		return to_route('dashboard.index');
 	}
 	
+	public function destroy($id)
+	{
+		$product = Product::find($id);
+		
+		File::delete(public_path('src/images/products/' . $product->image));
+		
+		$product->delete();
+		
+		return to_route('dashboard.index');
+	}
+	
 }
