@@ -1,7 +1,7 @@
 # Title
 
 <p align="center">
-  <img src=""  alt="Proyecto EJDK"/>
+  <img src="https://github.com/Hernanarica/ejdk/blob/main/public/thumbnail.jpeg?raw=true"  alt="Proyecto EJDK"/>
 </p>
 
 ```js
