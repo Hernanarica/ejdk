@@ -1,5 +1,5 @@
 @extends('layout.layout-template')
-@section('title', 'Crear item')
+@section('title', 'Crear item de la galeria')
 @section('content')
 	<div class="relative min-h-[calc(100vh-88px)] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 		
@@ -33,21 +33,33 @@
 		
 		<div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
 			<div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-				<form class="space-y-6" action="{{ route('products.store') }}" method="POST">
+				<form
+					class="space-y-6"
+					action="{{ route('gallery.store') }}"
+					method="POST"
+					enctype="multipart/form-data"
+				>
+					@csrf
 					<div>
 						<label
-							for="name"
+							for="title"
 							class="block text-sm font-medium text-gray-700"
 						>
 							Nombre
 						</label>
 						<div class="mt-1">
 							<input
-								id="name"
-								name="name"
+								id="title"
+								name="title"
 								type="text"
 								class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+								value="{{ old('title') }}"
 							>
+							@error('title')
+								<x-error-notification-input>
+									{{ $message }}
+								</x-error-notification-input>
+							@enderror
 						</div>
 					</div>
 					
@@ -63,7 +75,12 @@
 								id="description"
 								name="description"
 								class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-							></textarea>
+							>{{ old('description') }}</textarea>
+							@error('description')
+								<x-error-notification-input>
+									{{ $message }}
+								</x-error-notification-input>
+							@enderror
 						</div>
 					</div>
 					
@@ -86,6 +103,19 @@
 							id="image"
 							class="sr-only"
 						>
+						@error('image')
+							<x-error-notification-input>
+								{{ $message }}
+							</x-error-notification-input>
+						@enderror
+					</div>
+					
+					<div id="imagePreviewContainer" class="hidden">
+						<img
+							src=""
+							alt=""
+							id="imagePreview"
+						>
 					</div>
 					
 					<div>
@@ -100,4 +130,19 @@
 			</div>
 		</div>
 	</div>
+	@push('js')
+		<script>
+			const $image = document.getElementById('image');
+			const $imagePreviewContainer = document.getElementById('imagePreviewContainer');
+			
+			$image.addEventListener('change', e => {
+				const previewImage = document.getElementById('imagePreview');
+				
+				$imagePreviewContainer.classList.remove('hidden');
+				
+				previewImage.src = URL.createObjectURL(e.currentTarget.files[0]);
+				previewImage.alt = e.currentTarget.files[0].name;
+			});
+		</script>
+	@endpush
 @endsection
