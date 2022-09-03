@@ -129,35 +129,42 @@
 							
 							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto" id="custom-scroll">
 								
-								@foreach($testimonials as $testimonial)
+								@foreach($testimonials as $testimony)
 									<li>
 										<div class="bg-white space-y-2">
 											<div class="min-w-0 flex-1">
 												<p class="text-sm font-medium text-gray-900">
-													{{ $testimonial->name }}
+													{{ $testimony->name }}
 												</p>
 												<p class="text-sm text-gray-500">
-													{{ $testimonial->date }}
+													{{ $testimony->date }}
 												</p>
 											</div>
 											<p class="text-gray-500 text-sm">
-												{{ $testimonial->description }}
+												{{ $testimony->description }}
 											</p>
 											<div>
 												<a
-													href=""
+													href="{{ route('testimonials.edit', [ 'id' => $testimony->id ]) }}"
 													class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 												>
 													Editar
 												</a>
-												<a
-													href=""
-													class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200
-												focus:outline-none
-												focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+												<form
+													action="{{ route('testimonials.destroy', [ 'id' => $testimony->id ]) }}"
+													method="POST"
+													class="inline-block"
 												>
-													Eliminar
-												</a>
+													@csrf
+													@method('DELETE')
+													<button
+														class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200
+															focus:outline-none
+															focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+													>
+														Eliminar
+													</button>
+												</form>
 											</div>
 										</div>
 									</li>
