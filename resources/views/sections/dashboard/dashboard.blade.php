@@ -89,9 +89,10 @@
 										</div>
 									</li>
 								@endforeach
-								
+								@if(count($products) === 0)
+									<x-without-results-notification />
+								@endif
 							</ul>
-						
 						</div>
 					</div>
 				</div>
@@ -169,9 +170,10 @@
 										</div>
 									</li>
 								@endforeach
-								
+								@if(count($testimonials) === 0)
+									<x-without-results-notification />
+								@endif
 							</ul>
-						
 						</div>
 					</div>
 				</div>
@@ -247,9 +249,10 @@
 										</div>
 									</li>
 								@endforeach
-							
+								@if(count($users) === 0)
+									<x-without-results-notification />
+								@endif
 							</ul>
-						
 						</div>
 					</div>
 				</div>
@@ -329,9 +332,10 @@
 										</div>
 									</li>
 								@endforeach
-								
+								@if(count($galleries) === 0)
+									<x-without-results-notification />
+								@endif
 							</ul>
-						
 						</div>
 					</div>
 				</div>
