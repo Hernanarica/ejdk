@@ -24,7 +24,9 @@ class TestimonialController extends Controller
 		
 		Testimony::create($request->all());
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Testimonio creado con éxito'
+		]);
 	}
 	
 	public function edit($id)
@@ -42,14 +44,18 @@ class TestimonialController extends Controller
 		$testimony->update($request->all());
 		$testimony->save();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Testimonio actualizado con éxito'
+		]);
 	}
 	
 	public function destroy($id)
 	{
 		$testimony = Testimony::find($id);
 		$testimony->delete();
-	
-		return to_route('dashboard.index');
+		
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Testimonio eliminado con éxito'
+		]);
 	}
 }

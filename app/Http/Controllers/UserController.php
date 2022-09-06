@@ -27,19 +27,23 @@ class UserController extends Controller
 	
 	public function update(UserRequest $request, $id)
 	{
-		$user = User::find($id);
-		$user->email = $request->email;
+		$user           = User::find($id);
+		$user->email    = $request->email;
 		$user->password = Hash::make($request->password);
 		
 		$user->save();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Usuario actualizado con éxito'
+		]);
 	}
 	
 	public function destroy($id)
 	{
 		User::find($id)->delete();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Usuario eliminado con éxito'
+		]);
 	}
 }

@@ -422,3 +422,7 @@
 		
 	</section>
 @endsection
+@push('js')
+	<script src="{{ asset('src/js/notification.js') }}"></script>
+	@vite('resources/js/app.js')
+@endpush

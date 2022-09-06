@@ -32,7 +32,9 @@ class GalleryController extends Controller
 			'image'       => $image->imageName,
 		]);
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Item creado con éxito'
+		]);
 	}
 	
 	public function edit($id)
@@ -73,7 +75,9 @@ class GalleryController extends Controller
 		
 		$gallery->save();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Item actualizado con éxito'
+		]);
 	}
 	
 	public function destroy($id)
@@ -84,6 +88,8 @@ class GalleryController extends Controller
 		
 		$gallery->delete();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Item eliminado con éxito'
+		]);
 	}
 }

@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser';
 
 const $form              = document.getElementById('form');
-const $notification      = document.getElementById('notification');
-const $closeNotification = document.getElementById('close-notification');
+const $notification      = document.getElementById('notification-email');
+const $closeNotification = document.getElementById('close-notification-email');
 
 $form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -17,6 +17,6 @@ $form.addEventListener('submit', e => {
 		});
 });
 
-$closeNotification.addEventListener('click', () => {
+$closeNotification.addEventListener('click', e => {
 	$notification.classList.replace('flex', 'hidden');
 });

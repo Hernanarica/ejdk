@@ -32,7 +32,9 @@ class ProductController extends Controller
 			'image'       => $image->imageName,
 		]);
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Producto creado con éxito'
+		]);
 	}
 	
 	public function edit($id)
@@ -73,7 +75,9 @@ class ProductController extends Controller
 		
 		$product->save();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Producto actualizado con éxito'
+		]);
 	}
 	
 	public function destroy($id)
@@ -84,7 +88,8 @@ class ProductController extends Controller
 		
 		$product->delete();
 		
-		return to_route('dashboard.index');
+		return to_route('dashboard.index')->with([
+			'notification-message' => 'Producto eliminado con éxito'
+		]);
 	}
-	
 }
