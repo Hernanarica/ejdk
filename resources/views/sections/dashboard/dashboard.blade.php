@@ -18,9 +18,9 @@
 				<div>
 					<h2 class="sr-only" id="section-1-title">Mis productos</h2>
 					<div class="rounded-lg bg-white overflow-hidden shadow">
-						<div class="p-6">
+						<div class="p-4">
 							<!-- Your content -->
-							<div class="flex justify-between items-center pb-2 border-b">
+							<div class="flex justify-between items-center p-2 border-b">
 								
 								<div class="flex flex-col">
 									<span class="text-lg text-gray-500">
@@ -46,7 +46,7 @@
 							
 							</div>
 							
-							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto" id="custom-scroll">
+							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto p-2" id="custom-scroll">
 							
 								@foreach($products as $product)
 									<li class="flex justify-between items-center">
@@ -103,8 +103,8 @@
 				<div>
 					<h2 class="sr-only" id="section-2-title">Mis testimonios</h2>
 					<div class="rounded-lg bg-white overflow-hidden shadow">
-						<div class="p-6">
-							<div class="flex justify-between items-center pb-2 border-b">
+						<div class="p-4">
+							<div class="flex justify-between items-center p-2 border-b">
 								<div class="flex flex-col">
 									<span class="text-lg text-gray-500">
 										Testimonios
@@ -128,7 +128,7 @@
 							
 							</div>
 							
-							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto" id="custom-scroll">
+							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto p-2" id="custom-scroll">
 								
 								@foreach($testimonials as $testimony)
 									<li>
@@ -184,9 +184,9 @@
 				<div>
 					<h2 class="sr-only" id="section-2-title">Usuarios</h2>
 					<div class="rounded-lg bg-white overflow-hidden shadow">
-						<div class="p-6">
+						<div class="p-4">
 							<!-- Your content -->
-							<div class="flex justify-between items-center pb-2 border-b">
+							<div class="flex justify-between items-center p-2 border-b">
 								
 								<div class="flex flex-col">
 									<span class="text-lg text-gray-500">
@@ -211,7 +211,7 @@
 							
 							</div>
 							
-							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto" id="custom-scroll">
+							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto p-2" id="custom-scroll">
 							
 								@foreach($users as $user)
 									<li>
@@ -263,9 +263,9 @@
 				<div>
 					<h2 class="sr-only" id="section-1-title">Galeria</h2>
 					<div class="rounded-lg bg-white overflow-hidden shadow">
-						<div class="p-6">
+						<div class="p-4">
 							<!-- Your content -->
-							<div class="flex justify-between items-center pb-2 border-b">
+							<div class="flex justify-between items-center p-2 border-b">
 								
 								<div class="flex flex-col">
 									<span class="text-lg text-gray-500">
@@ -290,7 +290,7 @@
 							
 							</div>
 							
-							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto" id="custom-scroll">
+							<ul class="space-y-4 mt-2 max-h-96 h-full overflow-auto p-2" id="custom-scroll">
 								
 								@foreach($galleries as $gallery)
 									<li class="flex justify-between items-center">
