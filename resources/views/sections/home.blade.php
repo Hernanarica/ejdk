@@ -16,7 +16,7 @@
 			</div>
 			<div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
 				<h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">Servicios</h1>
-				<p class="mt-6 max-w-3xl text-xl text-gray-300">Ofrezco servicios varios en electronica, soporte técnico/reparaciones en general, me importa la opinion y la satisfaction
+				<p class="mt-6 max-w-3xl text-xl text-gray-300">Ofrezco servicios varios en electrónica, soporte técnico/reparaciones en general, me importa la opinión y la satisfacción
 					del cliente con mi trabajo y es por eso que me esfuerzo en mantener una línea directa con el cliente asesorándolo en sus consultas.
 				</p>
 			</div>
@@ -110,9 +110,7 @@
 				@foreach($testimonials as $testimonial)
 					<div class="p-8 bg-white border rounded shadow-sm">
 						<p class="mb-3 text-xs font-semibold tracking-wide uppercase">
-							<span class="text-gray-600">{{ $testimonial->created_at->diffForHumans() }}
-							</span>
-{{--							<span class="text-gray-600">1 Feb 2020</span>--}}
+							<span class="text-gray-600">{{ $testimonial->created_at->diffForHumans() }}</span>
 						</p>
 						<p class="mb-5 text-gray-700">{{ $testimonial->description }}</p>
 						<div class="flex items-center">
@@ -217,7 +215,7 @@
 							</div>
 						</div>
 						<div class="sm:col-span-2">
-							<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+							<label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
 							<div class="mt-1">
 								<textarea
 									id="message"
