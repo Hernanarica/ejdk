@@ -1,3 +1,7 @@
+<?php
+	/** @var \App\Models\Gallery $galleryItems */
+	/** @var \App\Models\Testimony $testimonials */
+?>
 @extends('layout.layout-template')@section('title', 'Bienvenido')
 @section('content')
 	<section id="servicios">
@@ -69,249 +73,61 @@
 	<section class="px-4 container mx-auto md:px-4" id="trabajos">
 		<h2 class="sr-only">Mis trabajos</h2>
 		<ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+			
+			@foreach($galleryItems as $galleryItem)
+				<li class="relative">
+					<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
 						<img
-							src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-							alt=""
+							src="{{ asset('src/images/gallery/' . $galleryItem->image ) }}"
+							alt="{{ $galleryItem->title }}"
 							class="image object-cover pointer-events-none group-hover:opacity-75"
-							data-lightbox="image-1"
-							data-title="My caption"
+							data-lightbox="{{ $galleryItem->title }}"
+							data-title="{{ $galleryItem->title }}"
 						>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-				    data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
-			<li class="relative">
-				<div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-					<img
-						src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						alt=""
-						class="image object-cover pointer-events-none group-hover:opacity-75"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-					<a
-						href="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80"
-						class="absolute inset-0 focus:outline-none"
-						data-lightbox="image-1"
-						data-title="My caption"
-					>
-						<span class="sr-only">Ver mas</span>
-					</a>
-				</div>
-				<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">Nombre</p>
-				<p class="block text-sm font-medium text-gray-500 pointer-events-none">Descripcion corta</p>
-			</li>
+						<a
+							href="{{ asset('src/images/gallery/' . $galleryItem->image ) }}"
+							class="absolute inset-0 focus:outline-none"
+							data-lightbox="{{ $galleryItem->title }}"
+							data-title="{{ $galleryItem->title }}"
+						>
+							<span class="sr-only">Ver mas</span>
+						</a>
+					</div>
+					<p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">{{ $galleryItem->title }}</p>
+					<p class="block text-sm font-medium text-gray-500 pointer-events-none">{{ $galleryItem->description }}</p>
+				</li>
+			@endforeach
 
 		</ul>
 	
 	</section>
 	<section class="mt-32" id="testimonios">
 		<h2 class="sr-only">Testimonios</h2>
-
-		<div>
-			<div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-				<div class="md:py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-gray-900 lg:pr-16">
-					<blockquote class="mt-6 md:flex md:flex-col">
-						<div class="relative text-lg font-medium text-white md:flex-grow">
-							<svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-								<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-							</svg>
-							<p class="relative text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in
-								laborum sed rerum et corporis.</p>
-						</div>
-						<footer class="mt-8">
-							<div class="flex items-start">
-								<div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-									<img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium text-gray-600">Judith Black</div>
-									<div class="text-base font-medium text-gray-400">CEO, Tuple</div>
-								</div>
-							</div>
-						</footer>
-					</blockquote>
+		
+		<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+			<div class="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
 				
-				</div>
-				<div class="md:py-12 px-4 md:border-gray-900 sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
-					<blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
-						<div class="relative text-lg font-medium text-white md:flex-grow">
-							<svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32">
-								<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-							</svg>
-							<p class="relative text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in
-								laborum sed rerum et corporis. Nemo expedita voluptas culpa sapiente alias molestiae.</p>
-						</div>
-						<footer class="mt-8">
-							<div class="flex items-start">
-								<div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-									<img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium text-gray-600">Joseph Rodriguez</div>
-									<div class="text-base font-medium text-gray-400">CEO, Workcation</div>
-								</div>
+				@foreach($testimonials as $testimonial)
+					<div class="p-8 bg-white border rounded shadow-sm">
+						<p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+							<span class="text-gray-600">{{ $testimonial->created_at->diffForHumans() }}
+							</span>
+{{--							<span class="text-gray-600">1 Feb 2020</span>--}}
+						</p>
+						<p class="mb-5 text-gray-700">{{ $testimonial->description }}</p>
+						<div class="flex items-center">
+							<div class="mr-3">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+								</svg>
 							</div>
-						</footer>
-					</blockquote>
-					<blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
-						<div class="relative text-lg font-medium text-white md:flex-grow">
-							<svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32">
-								<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-							</svg>
-							<p class="relative text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in
-								laborum sed rerum et corporis. Nemo expedita voluptas culpa sapiente alias molestiae.</p>
-						</div>
-						<footer class="mt-8">
-							<div class="flex items-start">
-								<div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-									<img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-								</div>
-								<div class="ml-4">
-									<div class="text-base font-medium text-gray-600">Joseph Rodriguez</div>
-									<div class="text-base font-medium text-gray-400">CEO, Workcation</div>
-								</div>
+							<div>
+								<p class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">{{ $testimonial->name }}</p>
 							</div>
-						</footer>
-					</blockquote>
+						</div>
+					</div>
+				@endforeach
 				
-				</div>
 			</div>
 		</div>
 		
@@ -422,7 +238,9 @@
 		
 	</section>
 @endsection
-@push('js')
+@if(Session::get('notification-message'))
 	<script src="{{ asset('src/js/notification.js') }}"></script>
+@endif
+@push('js')
 	@vite('resources/js/app.js')
 @endpush

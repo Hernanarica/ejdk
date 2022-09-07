@@ -49,7 +49,7 @@
 										<tr>
 											<td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
 												<img
-													src="{{ $product->image }}"
+													src="{{ asset('src/images/products/' . $product->image ) }}"
 													alt="{{ $product->title }}"
 													class="w-32 object-cover"
 												>

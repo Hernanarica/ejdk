@@ -52,13 +52,13 @@
 									<li class="flex justify-between items-center">
 										<div class="flex gap-3">
 											<img
-												src="https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+												src="{{ asset('src/images/products/' . $product->image ) }}"
 												alt="Image"
 												class="w-24 rounded object-cover"
 											>
 											<div>
-												<h3 class="text-gray-700 font-semibold">Producto N</h3>
-												<p class="text-gray-500 text-sm max-w-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor fuga nostrum quae repellendus repudiandae.</p>
+												<h3 class="text-gray-700 font-semibold">{{ $product->title }}</h3>
+												<p class="text-gray-500 text-sm max-w-sm">{{ $product->description }}</p>
 											</div>
 										</div>
 										
@@ -138,7 +138,7 @@
 													{{ $testimony->name }}
 												</p>
 												<p class="text-sm text-gray-500">
-													{{ $testimony->date }}
+													{{ $testimony->created_at->diffForHumans() }}
 												</p>
 											</div>
 											<p class="text-gray-500 text-sm">
@@ -296,7 +296,7 @@
 									<li class="flex justify-between items-center">
 										<div class="flex gap-3">
 											<img
-												src="https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+												src="{{ asset('src/images/gallery/' . $gallery->image ) }}"
 												alt="Image"
 												class="w-24 rounded object-cover"
 											>
